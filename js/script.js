@@ -46,3 +46,35 @@ closeMenu.addEventListener('click', () => {
 		openMenu.removeAttribute('style')
 	}, 200);
 })
+
+function mostrarCadastro() {
+	document.getElementById("formulario-login").style.display = "none";
+	document.getElementById("footer_form").style.display = "none";
+	document.getElementById("titulo_form").style.display = "none";
+	document.getElementById("formulario-cadastro").style.display = "block";
+  }
+
+  // Função para mostrar o formulário de login e ocultar o de cadastro
+  function mostrarLogin() {
+	document.getElementById("formulario-cadastro").style.display = "none";
+	document.getElementById("formulario-login").style.display = "flex";
+	document.getElementById("footer_form").style.display = "flex";
+	document.getElementById("titulo_form").style.display = "flex";
+  }
+
+let senha = document.getElementById('password_cadastro');
+let senhaC = document.getElementById('password_cadastro2');
+
+function validarSenha() {
+  if (senha.value != senhaC.value) {
+    senhaC.setCustomValidity("Senhas diferentes!");
+    senhaC.reportValidity();
+    return false;
+  } else {
+    senhaC.setCustomValidity("");
+    return true;
+  }
+}
+// verificar também quando o campo for modificado, para que a mensagem suma quando as senhas forem iguais
+senhaC.addEventListener('input', validarSenha);
+

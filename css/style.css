@@ -159,6 +159,7 @@ a {
 	display: flex;
 	flex: 1 1 50vw;
 	background-color: #fff;
+	flex-flow: row wrap;
 	align-items: center;
 	text-align: center;
 	text-decoration: none;
@@ -262,10 +263,12 @@ form .input-field:first-child {
 .input-field input ::placeholder{
 	color: rgba(0, 0, 0 0.5);
 }
+
 form {
 	display: flex;
 	flex-direction: column;
 }
+
 form input[type="submit"] {
 	margin-top: 2rem;
 	padding: 0.4rem;
@@ -282,6 +285,45 @@ form input[type="submit"]:hover{
 	letter-spacing: 0.5px;
 	background-color: #1b171f;
 } 
+#formulario-cadastro {
+	display: none;
+
+
+}
+
+.cadastro_titulo {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 100vh;
+	position: relative;
+}
+
+.cadastro_titulo::before {
+	content: "";
+	position: absolute;
+	height: 4px;
+	width: 25px;
+	bottom: 3px;
+	left: 0;
+	border-radius: 8px;
+	background-color: #322938;
+}
+
+#nome, #email, #username_cadastro, #password_cadastro, #password_cadastro2  {
+	display: flex;
+	flex: 1 1 30vw;
+	flex-flow: row wrap;
+	background-color: #fff;
+	align-items: left;
+	text-align: left;
+	text-decoration: none;
+	justify-content: left;
+	border: 10rem;
+	height: 100%;
+	padding: 1rem;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
 
 #openMenu, #closeMenu {
 	/* Remove a borda. */

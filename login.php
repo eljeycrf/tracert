@@ -37,21 +37,48 @@
                 <img id=logo_login src="./img/TRACERT (1).png" alt="logo tracert">
             </div> 
             <div class="ladoB">
-                <h2>Login</h2>
-                <form action="">
+                <h2 class="titulo_form" id="titulo_form">Login</h2>
+                <form action="./login2.php" method="post" id="formulario-login">
                     <div class="input-field">
-                        <input type="text" name="username" id="username" placeholder="Digite seu usuário">
+                        <input type="text" name="username" id="username" placeholder="Digite seu usuário" required>
                         <div class="underline"></div>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                        <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
                         <div class="underline"></div>
                     </div>
-                    <input type="submit" valeu="Continue">
+                    <input type="submit" value="Login">
                 </form>
-                <div class="footer_form">
-                    <span>Não possui uma conta? <a href="#">Clique aqui</a></span>
+                <div class="footer_form" id="footer_form">
+                    <span>Não possui uma conta? <a href="#" onclick="mostrarCadastro()">Clique aqui</a></span>
                 </div>
+                <form action="./cadastro2.php" method="post" id="formulario-cadastro">
+                    <h2 class="cadastro_titulo">Cadastre-se</h2>
+                    <div class="input-cadastro">
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu Nome" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-cadastro">
+                        <input type="text" name="email" id="email" placeholder="Digite seu e-mail" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-cadastro">
+                        <input type="text" name="username" id="username_cadastro" placeholder="Nome de usuário" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-cadastro">
+                        <input type="password" name="password" id="password_cadastro" placeholder="Digite sua senha" required>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-cadastro">
+                        <input type="password" name="password2" id="password_cadastro2" placeholder="Confirme sua senha" required>
+                        <div class="underline"></div>
+                    </div>
+                    <input type="submit" onclick="return validarSenha()" value="Cadastre-se">
+                    <div class="footer_form" id="footer_formcadastro">
+                        <span>Já possui uma conta? <a href="#" onclick="mostrarLogin()">Faça Login</a></span>
+                    </div>
+                </form>
             </div> 
         </main>
         <footer>
