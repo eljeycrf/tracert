@@ -18,8 +18,10 @@ if ($total_email == 0){
     if ($total_user == 0) {
         $add_usuario = "INSERT INTO usuarios (nome,email,user,password,tipo) VALUES ('$nome', '$email', '$user', '$password', '0')";
         $resultado_add = mysqli_query($conn, $add_usuario);
-        echo "<h1> <center>Cadastro realizado com Sucesso</center></h1>";
-        echo "<meta http-equiv='refresh' content='5; URL=./login.php'/>";
+        echo "<script>
+            window.alert('Cadastro realizado com sucesso.');
+            window.location.href = './login.php';
+            </script>";
         }
         else echo "<h1> Nome de usuário já está sendo utilizado";        
     } else echo "<h1> Email já está sendo utilizado";

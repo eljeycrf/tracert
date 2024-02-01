@@ -1,3 +1,24 @@
+<?php
+session_start();
+require_once('conn.php');
+error_reporting(0);
+ini_set("display_errors", 0 );
+
+if($_SESSION['username'] == True){
+    $user = $_SESSION['username'];
+    $busca_user= "SELECT * FROM usuarios WHERE user = '$user'";
+    $sql =  mysqli_query($conn, $busca_user);
+    while ($dados_usuario = mysqli_fetch_array($sql)){
+        $tipo_cliente = $dados_usuario['tipo'];
+        }
+    }else{
+    echo "<script>
+    window.location.href = './index.html';
+    </script>";
+    }
+?>
+      
+
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -13,11 +34,14 @@
             <nav id="menu">
                 <button id="closeMenu">X</button>
                 <div class="links_menu">
-                    <a href="#">Serviços</a>
-                    <a href="#">Preços</a>
-                    <a href="#">Clientes</a>
-                    <a href="#">Quem somos</a>
-                    <a href="#">Blog</a>
+                    <a href="./botwhats.php">BOT Whatsapp</a>
+                    <a href="./suporte.php">Chamados</a>
+                    <a href="./profile.php">Seu Perfil</a>
+                    <?php
+                    if($tipo_cliente == 1){
+                        echo "<a href='./admin.php'>Admin</a>";
+                    }
+                    ?>
                     <a href="./sair.php">Sair</a>
                  </div>
                 <div class="searchbox">

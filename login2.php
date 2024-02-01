@@ -9,7 +9,9 @@ $total_email = mysqli_num_rows($sql);
 if ($total_email == 1){
         $_SESSION['username'] = $user;
         $_SESSION['password'] = $password;
-        echo "<meta http-equiv='refresh' content='0; URL=./sistema.html'/>";
+        echo "<script>
+        window.location.href = './sistema.php';
+        </script>";
         } else {
             echo "<script>
             window.alert('Senha incorreta.');
